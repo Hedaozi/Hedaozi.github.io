@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 枚举法求概率 | 《概率论与数理统计》考试资料</title>
+<meta name="author" content="何凌锋">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.8/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">《概率论与数理统计》考试资料</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">说明</a></li>
+<li class="book-part">第一部分 总结</li>
+<li><a class="active" href="Summary01.html"><span class="header-section-number">1</span> 枚举法求概率</a></li>
+<li><a class="" href="Summary02.html"><span class="header-section-number">2</span> 样本空间与事件空间的一致性</a></li>
+<li><a class="" href="Summary03.html"><span class="header-section-number">3</span> 公式拾遗</a></li>
+<li><a class="" href="Summary04.html"><span class="header-section-number">4</span> 凑概率分布</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="Summary01" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> 枚举法求概率<a class="anchor" aria-label="anchor" href="#Summary01"><i class="fas fa-link"></i></a>
+</h1>
+<p>总体来看，有三种基本运算：幂方运算、排列运算、组合运算。</p>
+<p>幂方运算适用于各次完全相同的重复事件，例如放回地取球并记录结果；组合运算适用于不考虑顺序的情况；排列运算适用于需要考虑顺序的情况。</p>
+<p>需要注意的是，这里所谓的“完全相同的重复”、“不考虑顺序”、“考虑顺序”是<strong>实质上而非文本上的</strong>。而有时候我们需要把一个复杂过程分成几个简单过程，每一个过程中都可能面临这三种基本运算。下面举一些具体的例子。</p>
+<p><strong>例一</strong> 有<span class="math inline">\(k\)</span>个坛子，每一个装有<span class="math inline">\(n\)</span>个球，分别编号<span class="math inline">\(1\)</span>至<span class="math inline">\(n\)</span>，现在从每个坛子中任取一球，问<span class="math inline">\(m\)</span>是所取的球中的最大编号的概率。（课本习题一第四题）</p>
+<p><strong>分析：</strong></p>
+<blockquote>
+<p>由于每一次取球时面临的都是完全相同的坛子和完全相同的球，因而可以看作是简单的、互不影响的重复事件，用幂方运算可得一共有<span class="math inline">\(n^k\)</span>种取法。而当<span class="math inline">\(m\)</span>是所取得的球中编号最大的一个时有<span class="math inline">\(m^k-(m-1)^k\)</span>种。从而得到概率。</p>
+</blockquote>
+<p><strong>例二</strong> 一个孩子有12块形状相同的积木，其中6块黑色，4块红色，1块白色和1块蓝色。孩子想把这些积木排成一排，一共有多少排法？</p>
+<p><strong>分析：</strong></p>
+<blockquote>
+<p><strong>法一：排列的思想</strong><br><br>
+假设各个方块都是不同的，那么很显然有<span class="math inline">\(A_{12}^{12}\)</span>种排法。注意到积木形状是相同的，那么各颜色之间的顺序则是无关紧要的。[黑方块被重复排列了<span class="math inline">\(A_6^6\)</span>次，红方块被重复排列了<span class="math inline">\(A_4^4\)</span>次，白色和蓝色方块被重复排列了<span class="math inline">\(A_1^1\)</span>次。]从而排法种数为：<br><br><span class="math display">\[\frac{A_{12}^{12}}{A_6^6A_4^4A_1^1A_1^1}=27720\]</span>
+<strong>法二：组合的思想</strong><br><br>
+因为方块形状是相同的，因而同色方块之间的顺序就不构成差异了。那么实质上我们可以把“排列”过程理解成在12个位置中选出6个黑色的位置、4个红色的位置、1个白色的位置和1个蓝色的位置，即把该过程看成一个组合过程。从而一共有<span class="math inline">\(C_{12}^6C_6^4C_2^1C_1^1=27720\)</span>种。</p>
+</blockquote>
+<p>注意到，在某些时候，题目会有一些限定，例如存在某两个（或多个）相互绑定的元素、某两个（或多个）相互冲突的元素。这时候，对绑定的情况，只需要将绑定的元素先视作一个元素进行外部的排列组合，再进行内部的排列组合；对冲突的情况，只需要先内部选择再加入外部即可。下面是一道例题。</p>
+<p><strong>例三</strong> 某人有8个朋友，他打算邀请其中5人参加聚会，若：</p>
+<p>（1）如果有两人长期不和，不能同时参加聚会，他有多少种邀请方案？</p>
+<p>（2）如果有某两人只能同时被邀请，一共有多少种邀请方案？</p>
+<p><strong>分析：</strong></p>
+<blockquote>
+<p>（1）<strong>法一：“元素冲突”的想法</strong><br><br>
+不妨给此二人编号1、2，则有三种情况：1被邀请；2被邀请；1、2皆未被邀请。那么一共有<span class="math inline">\(C_6^5+C_2^1C_6^4=36\)</span>种。<br><br><strong>法二：“元素绑定”的想法</strong><br><br>
+不妨在所有可能性中减去二人同时被邀请的情况。那么一共有<span class="math inline">\(C_8^5-C_2^2C_6^3=36\)</span>种。<br><br>
+（2）见于（1） 中法二。</p>
+</blockquote>
+
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="index.html">说明</a></div>
+<div class="next"><a href="Summary02.html"><span class="header-section-number">2</span> 样本空间与事件空间的一致性</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#Summary01"><span class="header-section-number">1</span> 枚举法求概率</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics/blob/master/01-Summary01.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics/edit/master/01-Summary01.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>《概率论与数理统计》考试资料</strong>" was written by 何凌锋. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>

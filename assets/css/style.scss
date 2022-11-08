@@ -1,0 +1,25 @@
+---
+---
+
+@import "jekyll-theme-minimal";
+@import "{{ site.theme }}";
+
+* {
+    font-family: Centaur, 宋体;
+}
+
+a {
+    color: #A50021;
+}
+a:link {
+    color: #A50021;
+}
+a:visited {
+    color: #A50021;
+}
+a:hover {
+    color: #A50021;
+}
+a:active {
+    color: #A50021;
+}

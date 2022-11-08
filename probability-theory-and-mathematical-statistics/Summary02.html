@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 样本空间与事件空间的一致性 | 《概率论与数理统计》考试资料</title>
+<meta name="author" content="何凌锋">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.8/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">《概率论与数理统计》考试资料</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">说明</a></li>
+<li class="book-part">第一部分 总结</li>
+<li><a class="" href="Summary01.html"><span class="header-section-number">1</span> 枚举法求概率</a></li>
+<li><a class="active" href="Summary02.html"><span class="header-section-number">2</span> 样本空间与事件空间的一致性</a></li>
+<li><a class="" href="Summary03.html"><span class="header-section-number">3</span> 公式拾遗</a></li>
+<li><a class="" href="Summary04.html"><span class="header-section-number">4</span> 凑概率分布</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="Summary02" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> 样本空间与事件空间的一致性<a class="anchor" aria-label="anchor" href="#Summary02"><i class="fas fa-link"></i></a>
+</h1>
+<p>在古典概型的问题中，样本空间与事件空间的一致性是十分重要的。当然在大多数情况下，我们能够自然地维持两者的一致，但在某些时候，可能会不自觉地走向错谬，例如下题：</p>
+<p><strong>例一</strong> 将<span class="math inline">\(n\)</span>个球放入<span class="math inline">\(N\)</span>个盒子中(<span class="math inline">\(n\le N\)</span>)，求每个盒子最多放一球的概率。</p>
+<p><strong>分析：</strong></p>
+<blockquote>
+<p>（1）在没有任何限制的条件下，每一次放球都是一个完全一致的重复过程，很轻易我们就能给出放球的所有可能情况有<span class="math inline">\(N^n\)</span>种。接着，我们很可能就开始想：每个盒子最多放一个球，那么只需要在<span class="math inline">\(N\)</span>个盒子中选取出<span class="math inline">\(n\)</span>个盒子，然后把组合数<span class="math inline">\(C_N^n\)</span>除以<span class="math inline">\(N^n\)</span>就能得到概率。<br><br>
+但恰恰在第二步，我们出错了。<span class="math inline">\(N^n\)</span>种的放法默认了球的异质性（或者说放球是有顺序的）和盒子的异质性。而在第二步中，我们又忽略了球的异质性，只考虑了盒子的异质性。这就造成了样本空间和事件空间的不相匹配。<br><br>
+在我们选取了之前的样本空间的情况下，我们应该这样考虑第二步：第1个球有<span class="math inline">\(N\)</span>个选择，第2个球有N-1个选择[因为第1个球所在的盒子已经不能放了]……直到第<span class="math inline">\(n\)</span>个有<span class="math inline">\(N-n\)</span>个选择。因此，事件空间的样本点数实际上是<span class="math inline">\(A_N^n\)</span>而不是<span class="math inline">\(C_N^n\)</span>[从数字关系上也可以看出：<span class="math inline">\(\prod_{i=N-n}^{N}i=A_N^n\)</span>]。<br><br>
+记事件<span class="math inline">\(A=\)</span>“每个盒子最多放一球”。<br><span class="math display">\[P\left(A\right)=\frac{A_N^n}{N^n}\]</span>
+（2）若我们正向考虑，那么题设事件是下列事件的和：有1个球、有2个球、有3个球、……有n个球。这显然并不好计算。我们不妨先求其对立事件，即有0个球的概率，再利用对立事件的性质和概率的公理求得题设事件的概率。<br><br>
+计算对应样本空间的事件空间的样本点数时，我们可以将这个盒子无视，那么在考虑顺序和盒子异质性的情况下，就会有<span class="math inline">\({(N-1)}^n\)</span>种可能。<br><br>
+记事件<span class="math inline">\(B=\)</span>“某指定的盒子不空”。<br><span class="math display">\[P\left(B\right)=1-P\left(\bar{B}\right)=1-\frac{{(N-1)}^n}{N^n}\]</span></p>
+</blockquote>
+<blockquote>
+<p><strong>补充</strong>：为什么要在这里假定放球有顺序、盒子不同？我们不妨做以下尝试。<br><br>
+其一，若假定不考虑放球顺序，盒子不同，那么我们首先要确定不同的组合情况（例如某个盒子1个球、另一个盒子<span class="math inline">\(n-1\)</span>个球，或<span class="math inline">\(n\)</span>个盒子各1个，等等），其次要对每一种情况作排列计算（即选定哪个盒子放多少个）。这将是无比繁琐乃至于难以计算的，更何况在这种方式下选出的样本空间的样本点是不等可能的。<br><br>
+其二，若假定不考虑放球顺序，且盒子相同，那么我们要做的就是确定不同的组合情况（例如某个盒子1个球、另一个盒子<span class="math inline">\(n-1\)</span>个球，或<span class="math inline">\(n\)</span>个盒子各1个，等等），即上面假设的第一步。但这仍然是难以计算的，同时，选出的样本空间的样本点亦不是等可能的。<br><br>
+我们可以选取<span class="math inline">\(N=2\)</span>，<span class="math inline">\(n=2\)</span>的情况，计算在第一种假设下样本空间的不同样本点的各自的概率：<br><br>
+记录每个盒子里的球数，以点对表示：<br><span class="math display">\[\mathrm{\Omega}=\{\left(1,1\right),\left(2,0\right),(0,2)\}\]</span>
+列表可得（表略，利用考虑顺序和异质性下的古典概型即可得到）：<br><span class="math display">\[P\left(\left(1,1\right)\right)=\frac{1}{2}\neq\frac{1}{3}\]</span>
+<span class="math display">\[P\left(\left(2,0\right)\right)=P\left(\left(0,2\right)\right)=\frac{1}{4}\neq\frac{1}{3}\]</span>
+我们可以选取<span class="math inline">\(N=3\)</span>，<span class="math inline">\(n=2\)</span>的情况[之所以不选取<span class="math inline">\(N=2\)</span>，<span class="math inline">\(n=2\)</span>的情况，是因为在该情况下，这一样本空间很不巧地做到了样本点的等可能性；但是也请注意，我们只需举出一个反例就已经足够了，相对于更普遍的情况，<span class="math inline">\(N=2\)</span>，<span class="math inline">\(n=2\)</span>时的等可能性只是特殊情况而已]，计算在第二种假设下样本空间的不同样本点的各自的概率：<br><span class="math display">\[\mathrm{\Omega}=\{一个盒子两个球两个盒子没有球，两个盒子一个球一个盒子没有球\}\]</span>
+列表可得（表略，利用考虑顺序和异质性下的古典概型即可得到）：<br><span class="math display">\[P(一个盒子两个球两个盒子没有球)=13≠12\]</span>
+<span class="math display">\[P(两个盒子一个球一个盒子没有球)=23≠12\]</span>
+这里可能会产生疑惑：为什么在另两个假设下求样本点概率还在用其假设外的某种假设下的古典概型？原因很简单，因为我们知道这个古典概型是可行的，因此用它来验证。</p>
+</blockquote>
+<p>如果把详细的解析列出来，想必读者亦是能够理解的。难点恐怕在于，如何自觉地发现这些易错之处。简单地说，是把握住“异质”。“异质”可以有很多种表现形式：类别、顺序、个体差异等等。当然，“异质”只有在我们考虑它的时候才是必要的，而在不考虑的时候则完全是多余的，可以忽视。下面举一个具体的例子：</p>
+<p><strong>例二</strong> 一袋中装有<span class="math inline">\(m+n\)</span>个球，其中<span class="math inline">\(m\)</span>个黑球，<span class="math inline">\(n\)</span>个白球，现随机地从中每次取出一个球（不放回），求下列事件的概率：</p>
+<p>（1）第<span class="math inline">\(i\)</span>次取到的是白球；</p>
+<p>（2）第<span class="math inline">\(i\)</span>次才取到白球；</p>
+<p>（3）前<span class="math inline">\(i\)</span>次中能取到白球；</p>
+<p>（4）前<span class="math inline">\(i\)</span>次中恰好取到<span class="math inline">\(l\)</span>个白球（<span class="math inline">\(l\le\ i\le\ m+n\)</span>，<span class="math inline">\(l\le\ n\)</span>）；</p>
+<p>（5）到第<span class="math inline">\(i\)</span>次为止才取到<span class="math inline">\(l\)</span>个白球（<span class="math inline">\(l\le\ i\le\ m+n\)</span>，<span class="math inline">\(l\le\ n\)</span>）；</p>
+<p>（6）取球直到剩下的球的颜色都相同为止，最后剩下的全是白球。</p>
+<p><strong>分析：</strong></p>
+<blockquote>
+<p>这里的异质性表现为：球的两类颜色、球被取出的顺序（为了方便计算，每个球都是“独特”的“标了号的”），球被取出的顺序可以分解成两步：一步是确定结构，第二步是在结构内排序，用排列组合公式可以直观表示为：<span class="math inline">\(A_N^M=C_N^MA_M^M\)</span>（<span class="math inline">\(M\le\ N\)</span>）。<br><br>
+最简单的想法是：认为每一球都是不同的（编号），于是有<span class="math inline">\(A_{m+n}^{m+n}\)</span>种取法。如果选择了这一样本空间，那么在后面的计算中我们一定要保证，每一次选取都是考虑了所有<span class="math inline">\(m+n\)</span>个球的顺序的。<br><br>
+依次将六个事件标记为<span class="math inline">\(A_i\)</span>，其中<span class="math inline">\(i=1,2,3,4,5,6\)</span>。<br><br>
+（1）第<span class="math inline">\(i\)</span>次取到的是白球，最朴素的想法就是，在<span class="math inline">\(n\)</span>个白球中取出一个放在第<span class="math inline">\(i\)</span>个位置，前<span class="math inline">\(i-1\)</span>个位置随机排列。从而有：<br><span class="math display">\[P\left(A_1\right)=\frac{C_n^1A_{m+n-1}^{m+n-1}}{A_{m+n}^{m+n}}=\frac{n\left(m+n-1\right)!}{\left(m+n\right)!}=\frac{1}{m+n}\]</span>
+当然，我们可以只考虑前i次结果，那么相应地，样本空间点数也会变为<span class="math inline">\(A_{m+n}^i\)</span>。下面几问亦然。<br><br>
+至于更简便的想法，这里就略过了。<br><br>
+（2）第<span class="math inline">\(i\)</span>次才取到白球，只需要前<span class="math inline">\(i-1\)</span>次都是黑球即可。从而有：<br><span class="math display">\[P\left(A_2\right)=\frac{C_n^1A_m^{i-1}A_{m+n-i}^{m+n-i}}{A_{m+n}^{m+n}}=\frac{nA_m^{i-1}\left(m+n-i\right)!}{\left(m+n\right)!}=\frac{nA_m^{i-1}}{A_{m+n}^i}\]</span>
+（3）前<span class="math inline">\(i\)</span>次中能取到白球，可以算其对立事件：前<span class="math inline">\(i\)</span>次中全取到黑球。从而有：<br><span class="math display">\[P\left(A_3\right)=1-\frac{A_m^iA_{m+n-i}^{m+n-i}}{A_{m+n}^{m+n}}=1-\frac{A_m^i\left(m+n-i\right)!}{\left(m+n\right)!}=1-\frac{A_m^i}{A_{m+n}^i}\]</span>
+当然，在这里，我们可以不考虑顺序（因为在这一问中这是可操作的）。那么，所有可能操作就是从<span class="math inline">\(m+n\)</span>个球中取出<span class="math inline">\(i\)</span>个球，样本点数为<span class="math inline">\(C_{m+n}^i\)</span>。从而有：<br><span class="math display">\[P\left(A_3\right)=1-\frac{C_m^i}{C_{m+n}^i}\]</span>
+这一方法的运用在（4）中亦然。<br><br>
+（4）前<span class="math inline">\(i\)</span>次中恰好取到<span class="math inline">\(l\)</span>个白球，首先要确认取球过程中白球所在的位置。从而有：<br><span class="math display">\[P\left(A_4\right)=\frac{C_i^lA_n^lA_m^{i-l}A_{m+n-i}^{m+n-i}}{A_{m+n}^{m+n}}=\frac{C_i^lA_n^lA_m^{i-l}\left(m+n-i\right)!}{\left(m+n\right)!}=\frac{C_i^lA_n^lA_m^{i-l}}{A_{m+n}^i}\]</span>
+在不考虑顺序的情况下，所有可能操作就是从<span class="math inline">\(m+n\)</span>个球中取出<span class="math inline">\(i\)</span>个球的过程，样本点数为<span class="math inline">\(C_{m+n}^i\)</span>。符合题意的过程就是从<span class="math inline">\(n\)</span>个白球中取出<span class="math inline">\(l\)</span>个，从<span class="math inline">\(m\)</span>个黑球中取出<span class="math inline">\(i-l\)</span>个的过程。从而有：<br><span class="math display">\[P\left(A_4\right)=\frac{C_n^lC_m^{i-l}}{C_{m+n}^i}\]</span>
+（5）到第<span class="math inline">\(i\)</span>次为止才取到<span class="math inline">\(l\)</span>个白球，即考虑顺序地在前<span class="math inline">\(i-1\)</span>次取到<span class="math inline">\(l-1\)</span>个白球以及<span class="math inline">\(i-l\)</span>个黑球，第<span class="math inline">\(i\)</span>次再在剩下的<span class="math inline">\(n-l+1\)</span>个白球中取一个。从而有：<br><span class="math display">\[P\left(A_5\right)=\frac{C_{i-1}^{l-1}A_n^{l-1}A_m^{i-l}C_{n-l+1}^1A_{m+n-i}^{m+n-i}}{A_{m+n}^{m+n}}=\frac{C_{i-1}^{l-1}A_n^{l-1}A_m^{i-l}C_{n-l+1}^1\left(m+n-i\right)!}{\left(m+n\right)!}\\=\frac{C_{i-1}^{l-1}A_n^{l-1}A_m^{i-l}C_{n-l+1}^1}{A_{m+n}^i}\]</span>
+（6）取球直到剩下的球的颜色都相同为止，最后剩下的全是白球，等价于最后一个取到白球。令<span class="math inline">\(i=m+n\)</span>，则由（1）知：
+<span class="math display">\[P\left(A_6\right)=\frac{n}{m+n}\]</span></p>
+</blockquote>
+<p>读者应该发现了，“异质”在不同语境下有不同的需要被考虑的程度。例如在例二的（3）、（4）中，顺序可以被忽略，而只考虑结构；在（2）、（5）中，不考虑顺序可能就无法进行下去。关于这一点，例一的“补充”部分已经说得很清楚了。我们应当让一个过程变得易于计算、易于理解，但也要避免出现样本空间和事件空间相分离的情况。</p>
+<p>如果读者害怕出错，那么大可以在写完之后，重新回顾每一个算式所表达的含义。易错点在于各元素是否参与了排序，还是仅仅被考虑了结构，甚或是被放在其他的考虑中。算式本身，只要足够明晰，是能够反映思考的。</p>
+
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="Summary01.html"><span class="header-section-number">1</span> 枚举法求概率</a></div>
+<div class="next"><a href="Summary03.html"><span class="header-section-number">3</span> 公式拾遗</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#Summary02"><span class="header-section-number">2</span> 样本空间与事件空间的一致性</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics/blob/master/02-Summary02.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics/edit/master/02-Summary02.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>《概率论与数理统计》考试资料</strong>" was written by 何凌锋. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>

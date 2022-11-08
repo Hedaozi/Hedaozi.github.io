@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 公式拾遗 | 《概率论与数理统计》考试资料</title>
+<meta name="author" content="何凌锋">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.2"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.8/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.5.1/tabs.js"></script><script src="libs/bs3compat-0.2.5.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdn.jsdelivr.net/autocomplete.js/0/autocomplete.jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js"></script><!-- CSS --><link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">《概率论与数理统计》考试资料</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">说明</a></li>
+<li class="book-part">第一部分 总结</li>
+<li><a class="" href="Summary01.html"><span class="header-section-number">1</span> 枚举法求概率</a></li>
+<li><a class="" href="Summary02.html"><span class="header-section-number">2</span> 样本空间与事件空间的一致性</a></li>
+<li><a class="active" href="Summary03.html"><span class="header-section-number">3</span> 公式拾遗</a></li>
+<li><a class="" href="Summary04.html"><span class="header-section-number">4</span> 凑概率分布</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="Summary03" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> 公式拾遗<a class="anchor" aria-label="anchor" href="#Summary03"><i class="fas fa-link"></i></a>
+</h1>
+<div id="Summary0301" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> 二项式定理<a class="anchor" aria-label="anchor" href="#Summary0301"><i class="fas fa-link"></i></a>
+</h2>
+<p>二项式定理为：</p>
+<p><span class="math display">\[{(x+y)}^n=\sum_{i=0}^{n}{C_n^ix^iy^{n-i}}=C_n^0x^0y^n+C_n^1x^1y^{n-1}+C_n^2x^2y^{n-2}+\ldots+C_n^nx^ny^0\]</span></p>
+<p>注意，<span class="math inline">\(i\in[0,n]\)</span>且<span class="math inline">\(i\in\ N\)</span>，<span class="math inline">\(N\)</span>表示自然数。</p>
+<p>利用二项式定理的展开式，我们可以对组合数求和。例如：</p>
+<p><span class="math display">\[C_{2n}^0+C_{2n}^1+C_{2n}^2+\ldots+C_{2n}^n=\frac{1}{2}\sum_{i=0}^{2n}C_{2n}^i\\=\frac{1}{2}\left[C_{2n}^01^01^{2n}+C_{2n}^11^11^{2n-1}+C_{2n}^21^21^{2n-2}+\ldots+C_{2n}^{2n}1^{2n}1^0\right]\\=\frac{1}{2}\left(1+1\right)^{2n}=2^{2n-1}\]</span></p>
+<p>特殊地，对伯努利概型：</p>
+<p><span class="math display">\[\sum_{i=0}^{n}b\left(i;n;p\right)=\sum_{i=0}^{n}{C_n^ip^i{(1-p)}^{n-i}}=[p+(1-p)]n=1\]</span></p>
+</div>
+<div id="Summary0302" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> 等比数列求和公式<a class="anchor" aria-label="anchor" href="#Summary0302"><i class="fas fa-link"></i></a>
+</h2>
+<p>设有等比数列<span class="math inline">\(a_n=aq^n\)</span>。则其和</p>
+<p><span class="math display">\[\sum_{i=1}^{n}a_n=a+aq+aq^2+\ldots+aq^{n-1}\]</span></p>
+<p>两边同乘以<span class="math inline">\(q\)</span>，得：</p>
+<p><span class="math display">\[q\sum_{i=1}^{n}a_n=aq+aq^2+\ldots+aq^n\]</span></p>
+<p>两式相减，得：</p>
+<p><span class="math display">\[\left(1-q\right)\sum_{i=1}^{n}a_n=a-aq^n\]</span></p>
+<p>从而有</p>
+<p><span class="math display">\[\sum_{i=1}^{n}a_n=\frac{a(1-q^n)}{1-q}\]</span></p>
+<p>这种求和的方法在很多问题中都可以应用，例如在将循环小数转化成分数的问题中。这里以循环小数<span class="math inline">\(0.\dot{1}234\dot{5}\)</span>为例。</p>
+<p>设<span class="math inline">\(q=0.\dot{1}234\dot{5}\)</span>，则有<span class="math inline">\(100000q=12345.\dot{1}234\dot{5}\)</span>，两边相减可得：</p>
+<p><span class="math display">\[99999q=12345\]</span></p>
+<p><span class="math display">\[q=\frac{12345}{99999}\]</span></p>
+<p>推广之，对于循环节长度为<span class="math inline">\(k\)</span>的循环小数<span class="math inline">\(q\)</span>，都可以写成</p>
+<p><span class="math display">\[q=\frac{{10}^kq-q}{{10}^k-1}\]</span></p>
+</div>
+<div id="Summary0303" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> 指数函数<span class="math inline">\(e^x\)</span>的泰勒展开<a class="anchor" aria-label="anchor" href="#Summary0303"><i class="fas fa-link"></i></a>
+</h2>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\(x=x_0\)</span>具有任意阶导数，则<span class="math inline">\(f(x)\)</span>在点<span class="math inline">\(x_0\)</span>处的泰勒级数展开式为</p>
+<p><span class="math display">\[f\left(x\right)=\sum_{i=0}^{\infty}{\frac{f^{(i)}(x_0)}{i!}{(x-x_0)}^i}\]</span></p>
+<p>令<span class="math inline">\(x_0=0\)</span>，得到麦克劳林级数展开式：</p>
+<p><span class="math display">\[f\left(x\right)=\sum_{i=0}^{\infty}{\frac{f^{(i)}(0)}{i!}x^i}\]</span></p>
+<p>指数函数的泰勒级数展开式为：</p>
+<p><span class="math display">\[e^x=\sum_{i=0}^{\infty}{\frac{e^{x_0}}{i!}{(x-x_0)}^i}\]</span></p>
+<p>令<span class="math inline">\(x_0=0\)</span>，得到指数函数的麦克劳林级数展开式：</p>
+<p><span class="math display">\[e^x=\sum_{i=0}^{\infty}\frac{x^i}{i!}\]</span></p>
+</div>
+<div id="Summary0304" class="section level2" number="3.4">
+<h2>
+<span class="header-section-number">3.4</span> 导数和积分的定义及其直观含义<a class="anchor" aria-label="anchor" href="#Summary0304"><i class="fas fa-link"></i></a>
+</h2>
+<p>导数的定义式：</p>
+<p><span class="math display">\[\lim_{\mathrm{\Delta x}\rightarrow o}{\frac{\mathrm{\Delta y}}{\mathrm{\Delta x}}}=\lim_{\mathrm{\Delta x}\rightarrow o}{\frac{f\left(x_0+\mathrm{\Delta x}\right)-f(x_0)}{\mathrm{\Delta x}}}\]</span></p>
+<p>导数的直观含义：斜率、变化率。</p>
+<p>积分的定义略。</p>
+<p>积分的直观含义：微分和、带符号的围成面积。</p>
+</div>
+<div id="Summary0305" class="section level2" number="3.5">
+<h2>
+<span class="header-section-number">3.5</span> 复合函数求导法则<a class="anchor" aria-label="anchor" href="#Summary0305"><i class="fas fa-link"></i></a>
+</h2>
+<p>对一阶导数，若<span class="math inline">\(\alpha_i=\alpha_i\left(x\right)\)</span>，其中<span class="math inline">\(i=1,2,\ldots,n\)</span>：</p>
+<p><span class="math display">\[\frac{dg(\alpha_1,\alpha_2,\ldots,\alpha_n)}{dx}=\sum_{i=1}^{n}{\frac{dg}{d\alpha_i}\frac{d\alpha_i}{dx}}\]</span></p>
+<p>特别地，对<span class="math inline">\(f=f(x)\)</span>，有：</p>
+<p><span class="math display">\[\frac{dg(f)}{dx}=\frac{dg}{df}\frac{df}{dx}\]</span></p>
+<p>对二阶导数，有：</p>
+<p><span class="math display">\[\frac{d^2g(f)}{{(dx)}^2}=\frac{d\frac{dg(f)}{dx}}{dx}=\frac{d(\frac{dg}{df}\frac{df}{dx})}{dx}=\frac{df}{dx}\frac{d\frac{dg}{df}}{dx}+\frac{dg}{df}\frac{d\frac{df}{dx}}{dx}=\frac{df}{dx}\frac{d\frac{dg}{df}}{df}\frac{df}{dx}+\frac{dg}{df}\frac{d\frac{df}{dx}}{dx}\]</span></p>
+<p>更形象地，有：</p>
+<p><span class="math display">\[\frac{d^2g(f)}{{(dx)}^2}=[f'(x)]2g''fx+g'fxf''(x)\]</span></p>
+<p>注意：<span class="math inline">\(d^ng\)</span>指的是<span class="math inline">\(g\)</span>的<span class="math inline">\(n\)</span>阶微分，<span class="math inline">\({(dx)}^n\)</span>指的是<span class="math inline">\(dx\)</span>的<span class="math inline">\(n\)</span>次幂。</p>
+</div>
+<div id="Summary0306" class="section level2" number="3.6">
+<h2>
+<span class="header-section-number">3.6</span> 变上限积分函数的定义和性质<a class="anchor" aria-label="anchor" href="#Summary0306"><i class="fas fa-link"></i></a>
+</h2>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\([a,b]\)</span>上连续且可积，则有变上限积分函数：</p>
+<p><span class="math display">\[F\left(x\right)=\int_{a}^{x}{f(t)dt},\ x\in[a,b]\]</span></p>
+<p><span class="math inline">\(F\left(x\right)\)</span>在<span class="math inline">\([a,b]\)</span>上连续且可导，且导数为：</p>
+<p><span class="math display">\[F\left(x\right)={(\int_{a}^{x}{f(t)dt})}^\prime=f(x)\]</span></p>
+</div>
+<div id="Summary0307" class="section level2" number="3.7">
+<h2>
+<span class="header-section-number">3.7</span> 泊松积分 <span class="math inline">\(\int_{0}^{+\infty}{e^{-x^2}dx}\)</span>求值<a class="anchor" aria-label="anchor" href="#Summary0307"><i class="fas fa-link"></i></a>
+</h2>
+<p>一重积分无法求解此问题，应用二重积分可求。设：</p>
+<p><span class="math display">\[I=\int_{0}^{+\infty}{e^{-x^2}dx}\]</span></p>
+<p>根据积分的性质，可得：</p>
+<p><span class="math display">\[I=\int_{0}^{+\infty}{e^{-y^2}dy}\]</span></p>
+<p>两式相乘，得：</p>
+<p><span class="math display">\[I^2=\int_{0}^{+\infty}{e^{-x^2}dx}\int_{0}^{+\infty}{e^{-y^2}dy}=\int_{0}^{+\infty}{dx\int_{0}^{+\infty}e^{-x^2-y^2}dy}\]</span></p>
+<p>令<span class="math inline">\(x=rcos\theta\)</span>，<span class="math inline">\(y=rsin\theta\)</span>，得：</p>
+<p><span class="math display">\[I^2=\int_{0}^{\frac{\pi}{2}}{d\theta\int_{0}^{+\infty}{e^{-r^2}rdr}}\]</span></p>
+<p>其中，</p>
+<p><span class="math display">\[\int_{0}^{+\infty}{e^{-r^2}rdr}=\left(-\frac{1}{2}e^{-r^2}\right)|_0^{+\infty}=\lim_{r\rightarrow+\infty}{-\frac{1}{2}e^{-r^2}}+\frac{1}{2}e^{-0^2}=\frac{1}{2}\]</span></p>
+<p>从而，</p>
+<p><span class="math display">\[I^2=\int_{0}^{\frac{\pi}{2}}{\frac{1}{2}d\theta}=\frac{\pi}{4}\]</span></p>
+<p>得解</p>
+<p><span class="math display">\[\int_{0}^{+\infty}{e^{-x^2}dx}=I=\frac{\sqrt\pi}{2}\]</span></p>
+</div>
+<div id="Summary0308" class="section level2" number="3.8">
+<h2>
+<span class="header-section-number">3.8</span> <span class="math inline">\(\Gamma\)</span>函数的定义和性质<a class="anchor" aria-label="anchor" href="#Summary0308"><i class="fas fa-link"></i></a>
+</h2>
+<p><span class="math inline">\(\Gamma\)</span>函数为：</p>
+<p><span class="math display">\[\mathrm{\Gamma}\left(\alpha\right)=\int_{0}^{+\infty}{x^{\alpha-1}e^{-x}dx},\ \alpha&gt;0\]</span></p>
+<p><span class="math inline">\(\mathrm{\Gamma}\)</span>函数的性质为：</p>
+<p>（1）<span class="math inline">\(\mathrm{\Gamma}\left(\alpha+1\right)=\alpha\Gamma\left(\alpha\right)\)</span>；</p>
+<p>（2）<span class="math inline">\(\mathrm{\Gamma}\left(1\right)=1\)</span>；</p>
+<p>（3）<span class="math inline">\(\mathrm{\Gamma}\left(n+1\right)=n!,\ n\in\ N\)</span>。</p>
+<p>补充：<span class="math inline">\(B\)</span>函数为：</p>
+<p><span class="math display">\[B\left(p,q\right)=\int_{0}^{1}{x^{p-1}{(1-x)}^{q-1}dx},\ p&gt;0,\ q&gt;0\]</span></p>
+<p><span class="math inline">\(B\)</span>函数的性质为：</p>
+<p>（1）<span class="math inline">\(B\left(p,q\right)=B(q,p)\)</span>；</p>
+<p>（2）<span class="math inline">\(B\left(p+1,q+1\right)=\frac{q}{p+q+1}B\left(p+1,q\right)\)</span>；</p>
+<p>（3）<span class="math inline">\(B\left(p,q\right)=\frac{\mathrm{\Gamma}\left(p\right)\mathrm{\Gamma}\left(q\right)}{\mathrm{\Gamma}\left(p+q\right)}\)</span>。</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="Summary02.html"><span class="header-section-number">2</span> 样本空间与事件空间的一致性</a></div>
+<div class="next"><a href="Summary04.html"><span class="header-section-number">4</span> 凑概率分布</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#Summary03"><span class="header-section-number">3</span> 公式拾遗</a></li>
+<li><a class="nav-link" href="#Summary0301"><span class="header-section-number">3.1</span> 二项式定理</a></li>
+<li><a class="nav-link" href="#Summary0302"><span class="header-section-number">3.2</span> 等比数列求和公式</a></li>
+<li><a class="nav-link" href="#Summary0303"><span class="header-section-number">3.3</span> 指数函数\(e^x\)的泰勒展开</a></li>
+<li><a class="nav-link" href="#Summary0304"><span class="header-section-number">3.4</span> 导数和积分的定义及其直观含义</a></li>
+<li><a class="nav-link" href="#Summary0305"><span class="header-section-number">3.5</span> 复合函数求导法则</a></li>
+<li><a class="nav-link" href="#Summary0306"><span class="header-section-number">3.6</span> 变上限积分函数的定义和性质</a></li>
+<li><a class="nav-link" href="#Summary0307"><span class="header-section-number">3.7</span> 泊松积分 \(\int_{0}^{+\infty}{e^{-x^2}dx}\)求值</a></li>
+<li><a class="nav-link" href="#Summary0308"><span class="header-section-number">3.8</span> \(\Gamma\)函数的定义和性质</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics/blob/master/03-Summary03.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/Hedaozi/ProbabilityTheoryAndMathematicalStatistics/edit/master/03-Summary03.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>《概率论与数理统计》考试资料</strong>" was written by 何凌锋. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+</html>
