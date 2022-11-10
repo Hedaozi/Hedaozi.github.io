@@ -131,11 +131,12 @@ fig:diagnosticQQPlot
 tab:metsymData
 fig:PPVsim
 fig:CurseSim
-why-does-this-book-exist
-the-golden-age-of-data
-the-importance-of-doing-statistics
-an-open-source-book
-acknowledgements
+译者的话
+why-does-this-book-exist-本书何以存在
+the-golden-age-of-data-数据的黄金时代
+the-importance-of-doing-statistics-做统计的重要性
+an-open-source-book-一本开源的书
+acknowledgements-致谢
 introduction
 what-is-statistical-thinking-什么是统计思维
 dealing-with-statistics-anxiety-应对统计学的焦虑
